@@ -1,0 +1,20 @@
+Step 1 after creating the repo and setting up
+the branches you want is setting branch protection rules.
+Branching itself is an interesting topic of much debate
+I was convinced by the Software Engineering at Google that always commit to main and no feature branches
+was best practice. 
+However all corporations I have worked in for tbe past 20 years use branches.
+If you choose just to have a main branch, 
+you just dont get many of the tickbox branch protection rules that are in market leading products now
+
+From a devsecops perspective, you have to enable what I'm saying on commit checks like google does
+with its static code analysis
+
+In Github you may as well enable all tickbox branch protections and two approvers, no
+admin overwrite on at least your main and release branches
+
+In the article I talked about:
+Chose what severity of bugs you allow into specific environments - e.g. you can commit whatever you have written to local and run unit tests. 
+You can commit everything except CVSS 9.0+ bugs to the server. 
+You can only commit or merge code with CVSS 4.0 or lower bugs to the Main branch or deploy to “Production”. 
+Use things like system criticality and the good old CIA triad in addition to CVSS
