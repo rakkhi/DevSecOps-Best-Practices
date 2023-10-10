@@ -1,0 +1,29 @@
+1. Integrated Development Environment (IDE) plugins - if you are going to “Shift Left” why not shift all the way left. It is great when Office applications or your browser gives you a little squiggly line when you make a spelling or grammar mistake. Why not have this for when you write insecure code? This is also the best way to train your developers and engineers in secure coding.
+task for this repo: link to free devsecops ide pluggins
+
+2. Scanning all your code repositories (repos), all the time, fix often - scan all your code, at commit to local, commit to head, merge request, build, deploy. Scan open source packages or other libraries that you depend on and even 4th party dependencies for vulnerabilities. Scan your application and infrastructure as code. Scanning is useless without fixing what you find of course. Refer my last point for policies based on the severity of the vulnerability.
+task for this repo: integrate free app, sca and iac scanning tools
+
+3. Scan your binary artifacts - sometimes you will get images for containers or servers as artifacts. Trust but verify. Even the artifacts your have built yourself, scan them before you deploy in case new vulnerabilities have emerged or an attacker has modified them (use identity controls and cryptographic signing to ensure this cannot happen).
+task for this repo: integrate free bimary scanning to an example container and server
+
+4. Protect your runtime - ensure nothing runs in memory that is not in your approved image. Nothing spawns as a child process that is not an executable parent in your image. Understand and baseline your network communications.
+task for this repo: integrate free runtime protection to an example server and container
+
+5. Ensure you have the right coverage and effectiveness of your security controls - things you don’t build, but rather configure. Make sure your run time configuration, always matches your code. Govern for cyber security coverage and effective operations.
+task for this repo: intrgrate free csmp with example aws, azure and gcp tenant
+
+6. Externalise and centralise your secrets - it is obvious not to have secrets in source code, but also having your secrets, keys, certificates, credentials outside of your artifacts, centralized so they can be revoked and rotated from one place and pulled only when required and stored only in memory is also a great idea.
+task for this repo: sample integration with hashicorp vault
+
+7. Test your system the way an attacker would - continuously attack and fuzz your system.
+task for this repo: sample integration of webapp with asm
+
+8. No humans ever login to your systems - manage everything via code. Emergency access by humans to Production only in a managed and recorded way. Even then the system is considered “tainted” and redeployed once the bug is fixed.
+task for this repo: sample code login via hashcorp vault
+
+9. Have at minimum 3 instances of all cyber security controls - one to integrate with your environments with Production controls, one to integrate with your environments WITHOUT Production controls and one for testing the cyber security control itself.
+task for this repo: sample code for multiple entra id instance integration
+
+10. Chose what severity of bugs you allow into specific environments - e.g. you can commit whatever you have written to local and run unit tests. You can commit everything except CVSS 9.0+ bugs to the server. You can only commit or merge code with CVSS 4.0 or lower bugs to the Main branch or deploy to “Production”. Use things like system criticality and the good old CIA triad in addition to CVSS.
+task for this repo: custom branch protection rules here
